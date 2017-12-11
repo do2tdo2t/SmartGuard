@@ -106,11 +106,11 @@ if __name__=="__main__":
             l = data.split(',')
 	    print l[0]
 	    print l[1]
-	    if (l[1] == '0'):
+	    if (l[1] == '1'):
 		updateDB(l[0])
 		global isAlarm
             	isAlarm = True
-	    elif(l[1] == '1'):
+	    elif(l[1] == '0'):
 		isAlarm = False				
 		backDB(l[0])
     thread.join()
