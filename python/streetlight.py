@@ -122,8 +122,9 @@ class AlarmThread(threading.Thread):
                     p.ChangeFrequency(scale[2])
                     time.sleep(0.4)
                     count = 2
-                    client_socket.sendHelp()
-                    isStart = True
+                    if isStart == False:
+                        isStart = True
+                        client_socket.sendHelp()
             elif count == 0:
                     p.stop()
                     GPIO.cleanup(13)
